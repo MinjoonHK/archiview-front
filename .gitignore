@@ -1,0 +1,35 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build outputs
+dist/
+build/
+.out/
+
+# Next.js
+.next/
+.vercel/
+
+# Expo / React Native
+.expo/
+.expo-shared/
+android/
+ios/
+
+# Turbo
+.turbo/
+
+# env
+.env
+.env.*
+!.env.example
+
+# logs
+npm-debug.log*
+pnpm-debug.log*
+
+# OS / Editor
+.DS_Store
+.idea/
+.vscode/
