@@ -5,7 +5,7 @@ export default function Home(): React.ReactNode {
   return (
     <div>
       <div className="flex justify-center items-center h-screen flex-col">
-        <div className="heading1">Archiview Project Initialize</div>
+        <div className="heading-24-bold">Archiview Project Initialize</div>
         <div className="heading2">Archiview Project Initialize</div>
         <div className="heading3">Archiview Project Initialize</div>
         <div className="body1">Archiview Project Initialize</div>
