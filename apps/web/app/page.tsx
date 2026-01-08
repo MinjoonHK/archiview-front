@@ -2,15 +2,18 @@
 import { useState } from 'react';
 
 import { TabBar } from '@/shared/components/TabBar';
+import { SearchBar } from '@/shared/components/SearchBar';
 
 type SearchScope = 'all' | 'info' | 'editor';
 
 export default function Home(): React.ReactNode {
   const [scope, setScope] = useState<SearchScope>('all');
+  const [input, setInput] = useState('');
 
   return (
     <div>
       <div className="flex justify-center items-center h-screen flex-col w-full">
+        <SearchBar value={input} onChange={setInput} />
         <TabBar
           items={[
             { value: 'all', label: '전체' },
