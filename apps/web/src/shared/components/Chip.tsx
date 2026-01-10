@@ -53,13 +53,18 @@ export const Chip = ({
   // chipType 스타일
   const chipTypeStyle = chipType === 'keyword' ? 'h-[36px]' : 'h-[26px]';
 
-  const colorToken =
-    color === 'primary' ? 'primary-40' : color === 'secondary' ? 'secondary-40' : 'default-40';
-
   const variantStyle =
     variant === 'contained'
-      ? `bg-${colorToken} text-neutral-10`
-      : `border border-${colorToken} text-${colorToken}`;
+      ? {
+          primary: 'bg-primary-40 text-neutral-10',
+          secondary: 'bg-secondary-40 text-neutral-10',
+          default: 'bg-default-40 text-neutral-10',
+        }[color]
+      : {
+          primary: 'border border-primary-40 text-primary-40',
+          secondary: 'border border-secondary-40 text-secondary-40',
+          default: 'border border-default-40 text-default-40',
+        }[color];
 
   return (
     <button

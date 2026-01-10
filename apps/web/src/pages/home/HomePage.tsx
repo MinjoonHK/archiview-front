@@ -62,7 +62,7 @@ export const HomePage = (): React.ReactElement => {
           <Chip
             hashTag={true}
             chipType="category"
-            color="secondary"
+            color="primary"
             label="텍스트"
             variant="outlined"
             endIcon={<XIcon />}
@@ -70,11 +70,19 @@ export const HomePage = (): React.ReactElement => {
           <Chip hashTag={false} chipType="keyword" label="텍스트" variant="outlined" />
           <Chip
             hashTag={true}
-            color="primary"
+            color="secondary"
             chipType="keyword"
             label="텍스트"
             variant="outlined"
             endIcon={<XIcon />}
+          />
+
+          <Chip
+            hashTag={false}
+            color="default"
+            chipType="keyword"
+            label="텍스트"
+            variant="outlined"
           />
         </div>
       </div>
