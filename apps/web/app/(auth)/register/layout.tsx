@@ -2,7 +2,7 @@ import React from 'react';
 
 import { BackButtonHeader } from '@/widgets/header/BackButtonHeader';
 
-export default function LoginLayout({
+export default function RegisterLayout({
   children,
 }: {
   children: React.ReactNode;

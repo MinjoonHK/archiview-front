@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { Card } from '@/shared/ui/common/Card';
 import { Button } from '@/shared/ui/button';
@@ -10,9 +11,18 @@ type Role = 'EDITOR' | 'ARCHIVER';
 
 export const RoleSelectSection = () => {
   const [role, setRole] = useState<Role | null>(null);
+  const router = useRouter();
+  const buttonVariant = role ? 'contained' : 'outlined';
+
+  const buttonLabel = role
+    ? role === 'EDITOR'
+      ? '에디터로 가입하기'
+      : '아카이버로 가입하기'
+    : '가입하기';
 
   const handleNext = () => {
     if (!role) return;
+    router.push(`/register-finish?role=${role}`);
   };
 
   return (
@@ -60,17 +70,16 @@ export const RoleSelectSection = () => {
         </Card>
       </div>
 
-
       <div className="flex flex-col items-center">
         <Button
-          disabled={!role}
+          variant={buttonVariant}
           onClick={handleNext}
           className={[
             'w-full body-16-semibold',
             role ? 'bg-neutral-90 text-white' : 'bg-neutral-10 text-neutral-40',
           ].join(' ')}
         >
-          계속하기
+          {buttonLabel}
         </Button>
 
         <p className="text-center caption-12-semibold text-neutral-50">

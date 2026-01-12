@@ -1,4 +1,4 @@
-import { RoleSelectSection } from './RoleSelectSection';
+import { RoleSelectSection } from './ui/RoleSelectSection';
 
 export const RegisterPage = () => {
   return (
