@@ -16,8 +16,8 @@ export const Card = ({ selected = false, children, onClick, className }: ICard) 
       tabIndex={0}
       onClick={onClick}
       className={cn(
-        'w-full cursor-pointer bg-white p-5',
-        'rounded-5',
+        'w-full cursor-pointer bg-white',
+        'rounded-[20px]',
         'transition-colors',
         selected ? 'border-[1.2px] border-primary-40' : 'border border-neutral-30',
         className,
