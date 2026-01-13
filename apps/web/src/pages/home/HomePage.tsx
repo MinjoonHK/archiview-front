@@ -28,6 +28,28 @@ export const HomePage = (): React.ReactElement => {
           views={10}
           saves={5}
         />
+
+        <UnderLineInput
+          state="success"
+          message="message"
+          rightSlot={
+            <>
+              <XIcon />
+              <XIcon />
+            </>
+          }
+        >
+          <input placeholder="입력해주세요" />
+        </UnderLineInput>
+
+        <BoxInput
+          state="success"
+          message="입력을 완료했어요."
+          rightSlot={<button className="bg-amber-400">완료</button>}
+        >
+          <input placeholder="텍스트를 입력하세요" />
+        </BoxInput>
+
         <TabBar
           items={[
             { value: 'all', label: '전체' },
