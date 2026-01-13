@@ -4,7 +4,7 @@ interface IBadgeProps {
   color: string;
 }
 
-export const Badge = ({ variant, label, color }: IBadgeProps) => {
+export const Badge = ({ variant, label, color }: IBadgeProps): React.ReactElement => {
   const isOutlined = variant === 'outlined';
   const themeColor = `var(--color-${color})`;
 

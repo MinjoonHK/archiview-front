@@ -30,14 +30,12 @@ export const HomePage = (): React.ReactElement => {
             width={243}
             height={162}
           /> */}
-          <div className="absolute left-1/2 -translate-x-1/2 bottom-[-20px] w-[335px]">
-            <div className="w-[335px] h-[54px] bg-white rounded-full px-[20px] shadow-[0_0_11px_0_rgba(144,144,144,0.40)] flex items-center">
-              <SearchBar
-                value={searchedText}
-                onChange={(e) => setSearchedText(e)}
-                onSubmit={() => {}}
-              />
-            </div>
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-[-20px] bg-transparent rounded-full shadow-[0_0_11px_0_rgba(144,144,144,0.40)] flex items-center">
+            <SearchBar
+              value={searchedText}
+              onChange={(e) => setSearchedText(e)}
+              onSubmit={() => {}}
+            />
           </div>
         </div>
         <div className="p-[20px]">
