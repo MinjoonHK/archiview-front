@@ -4,14 +4,15 @@ import { Badge } from '@/shared/ui/Badge';
 import { Header } from '@/shared/ui/common/Header';
 import { NavigationFooter } from '@/shared/ui/common/NavigationFooter';
 import { SearchBar } from '@/shared/ui/SearchBar';
-import { useState } from 'react';
+import { use, useState } from 'react';
 import { CategorySection } from '@/pages/home/components/CategorySection';
 import { HotPlaceSection } from '@/pages/home/components/HotPlaceSection';
 import { BelievedEditorSeciton } from '@/pages/home/components/BelievedEditorSeciton';
+import { BottomSheet } from '@/shared/ui/common/BottomSheet/BottomSheet';
 
 export const HomePage = (): React.ReactElement => {
   const [searchedText, setSearchedText] = useState<string>('');
-
+  const [open, setOpen] = useState(false);
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -45,6 +46,38 @@ export const HomePage = (): React.ReactElement => {
           <BelievedEditorSeciton />
         </div>
       </div>
+      <BottomSheet isOpen={open} onOpenChange={setOpen} height={500} peekHeight={72}>
+        <div>
+          {/* drag handle */}
+          <div className="flex justify-center py-3">
+            <div className="h-1 w-10 rounded-full bg-neutral-300" />
+          </div>
+
+          {/* content */}
+          <div className="px-5 pb-6">
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+            <h2 className="text-lg font-semibold">업로드한 장소 1</h2>
+          </div>
+        </div>
+      </BottomSheet>
       <NavigationFooter />
     </div>
   );
