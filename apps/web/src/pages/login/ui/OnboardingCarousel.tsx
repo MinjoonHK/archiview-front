@@ -11,10 +11,7 @@ interface IOnboardingText {
 }
 
 interface IOnboardingCarouselProps {
-  /** 슬라이드 비주얼 영역 (캐러셀로 넘어갈 요소들) */
   children: React.ReactNode;
-
-  /** 하단에 고정되어 전환될 텍스트 데이터 */
   items: IOnboardingText[];
 }
 

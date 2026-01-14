@@ -13,6 +13,15 @@ interface ICarouselProps {
   className?: string;
 }
 
+/**
+ * 캐러셀 공통 컴포넌트
+ * @props
+ * @property {React.ReactNode} children 슬라이드
+ * @property {(index: number) => void} [onIndexChange] 선택된 슬라이드 인덱스가 변경될 때 호출되는 콜백
+ * @property {boolean} [showIndicator] 하단 인디케이터 표시 여부
+ * @property {boolean} [loop=false] 순환 여부
+ * @property {string} [className]
+ */
 export const Carousel = ({
   children,
   onIndexChange,
