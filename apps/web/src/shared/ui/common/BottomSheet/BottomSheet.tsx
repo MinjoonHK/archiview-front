@@ -41,6 +41,11 @@ export const BottomSheet = ({
     if (startYRef.current === null) return;
 
     const diff = e.clientY - startYRef.current;
+
+    if (isOpen && diff < 0) return;
+
+    if (!isOpen && diff > 0) return;
+
     setDragOffset(diff);
   };
 
@@ -66,7 +71,7 @@ export const BottomSheet = ({
     <div
       ref={sheetRef}
       className={cn(
-        'fixed w-full max-w-125 bottom-0 left-1/2 z-40 h-full rounded-t-[20px] bg-white touch-none',
+        'fixed flex flex-col w-full max-w-125 bottom-0 left-1/2 z-40 h-full rounded-t-[20px] bg-white touch-none',
         'transition-transform duration-250 ease-out',
       )}
       style={{
