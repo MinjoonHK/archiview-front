@@ -33,11 +33,19 @@ export const BoxInput = ({ state, message, rightSlot, children, className }: IBo
         <div className={cn('flex flex-col gap-1 w-full', className)}>
           <div
             className={cn(
-              'flex items-center h-14 gap-3 rounded-xl border px-4 caret-primary-40',
+              'flex items-center h-12 gap-3 rounded-xl border px-4 caret-primary-40',
               boxBorderByState[visualState],
             )}
           >
-            <div className="flex-1 body-14-medium">{cloneElement(children, bind)}</div>
+            <div className="flex-1">
+              {cloneElement(children, {
+                ...bind,
+                className: cn(
+                  'w-full bg-transparent outline-none body-14-medium',
+                  children.props.className,
+                ),
+              })}
+            </div>
             {rightSlot}
           </div>
 
