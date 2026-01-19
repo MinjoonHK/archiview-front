@@ -17,7 +17,7 @@ export const Card = ({ selected = false, children, onClick, className }: ICard) 
       onClick={onClick}
       className={cn(
         'w-full cursor-pointer bg-white',
-        'rounded-[20px]',
+        'rounded-default',
         'transition-colors',
         selected ? 'border-[1.2px] border-primary-40' : 'border border-neutral-30',
         className,

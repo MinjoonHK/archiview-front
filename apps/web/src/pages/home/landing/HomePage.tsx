@@ -1,6 +1,6 @@
 'use client';
 import { Badge } from '@/shared/ui/Badge';
-import { LogoHeader } from '@/widgets/header/LogoHeader';
+import { LogoHeader } from '@/widgets/header';
 import { NavigationFooter } from '@/widgets/navigation/NavigationFooter';
 import { SearchBar } from '@/shared/ui/SearchBar';
 import { useState } from 'react';
