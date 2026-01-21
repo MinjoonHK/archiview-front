@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Card } from '@/shared/ui/common/Card';
 import { cn } from '@/shared/lib/cn';
 
 interface IItemProps {
@@ -12,11 +11,18 @@ interface IItemProps {
 
 export const Item = ({ thumbnail, children, onClick, className }: IItemProps) => {
   return (
-    <Card onClick={onClick} className={cn('flex items-center p-5', className)}>
+    <div
+      onClick={onClick}
+      className={cn(
+        'flex w-full cursor-pointer bg-white items-center p-5',
+        'active:border-t active:border-b active:border-primary-40',
+        className,
+      )}
+    >
       {/* 이미지 */}
       <div className="shrink-0">{thumbnail}</div>
 
       <div className="min-w-0 flex-1">{children}</div>
-    </Card>
+    </div>
   );
 };
