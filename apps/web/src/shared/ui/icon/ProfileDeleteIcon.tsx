@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react';
 
-export const ProfileIcon = (props: SVGProps<SVGSVGElement>): React.ReactElement => {
+export const ProfileDeleteIcon = (props: SVGProps<SVGSVGElement>): React.ReactElement => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

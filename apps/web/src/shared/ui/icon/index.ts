@@ -15,3 +15,4 @@ export * from './UserCircleIcon';
 export * from './LocationPinIcon';
 export * from './NavigationFooterFolderIcon';
 export * from './CaretRightIcon';
+export * from './ProfileDeleteIcon';
