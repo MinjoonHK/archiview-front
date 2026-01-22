@@ -1,1 +1,1 @@
-export { HomePage as default, metadata } from '@/pages/editor/home';
+export { EditorHomePage as default, metadata } from '@/pages/editor/home';

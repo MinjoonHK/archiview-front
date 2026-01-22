@@ -9,7 +9,7 @@ import { HotPlaceSection } from '@/pages/archiver/home/ui/HotPlaceSection';
 import { BelievedEditorSeciton } from '@/pages/archiver/home/ui/BelievedEditorSeciton';
 import Image from 'next/image';
 
-export const HomePage = (): React.ReactElement => {
+export const ArchiverHomePage = (): React.ReactElement => {
   const [searchedText, setSearchedText] = useState<string>('');
   return (
     <div className="flex min-h-screen flex-col">

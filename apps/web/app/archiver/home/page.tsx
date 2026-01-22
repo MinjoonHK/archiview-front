@@ -1,1 +1,1 @@
-export { HomePage as default, metadata } from '@/pages/archiver/home';
+export { ArchiverHomePage as default, metadata } from '@/pages/archiver/home';

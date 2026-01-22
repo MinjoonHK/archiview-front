@@ -2,7 +2,7 @@ import { EditorTopBanner } from './EditorTopBanner';
 import { EditorInsight } from './EditorInsight';
 import { PopularPlaceSection } from './PopularPlaceSection';
 
-export const HomePage = () => {
+export const EditorHomePage = () => {
   return (
     <div className="w-full">
       <EditorTopBanner />
