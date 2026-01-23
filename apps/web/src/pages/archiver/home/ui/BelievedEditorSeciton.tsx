@@ -24,10 +24,10 @@ const BelievedEditorItem = ({
         <div className="caption-12-regular text-neutral-50 mb-3">주소 ~로 000 까지</div>
         <div className="flex items-center gap-1">
           <span>
-            <Badge variant="outlined" label="카테고리" color="primary-40" />
+            <Badge variant="outlined" color="primary-40">카테고리</Badge>
           </span>
           <span>
-            <Badge variant="outlined" label="사용자 지정" color="secondary-50" />
+            <Badge variant="outlined" color="secondary-50">사용자 지정</Badge>
           </span>
         </div>
       </div>

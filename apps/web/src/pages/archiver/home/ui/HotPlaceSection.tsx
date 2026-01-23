@@ -1,64 +1,36 @@
-import Image from 'next/image';
-import { useState } from 'react';
-import { Badge } from '@/shared/ui/Badge';
-import { CaretRightIcon, FolderIcon } from '@/shared/ui/icon';
-import { Card } from '@/shared/ui/common/Card';
+import { CaretRightIcon } from '@/shared/ui/icon';
 
-const HotPlaceItem = ({
-  imageUrl,
-  title,
-}: {
-  imageUrl: string;
-  title: string;
-}): React.ReactElement => {
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  const handleFavoriteClick = (e: React.MouseEvent<SVGSVGElement>) => {
-    e.stopPropagation();
-    setIsFavorite((prev) => !prev);
-  };
-
-  return (
-    <Card
-      onClick={() => console.log('click')}
-      className="shrink-0 h-52 w-46 shadow-default overflow-hidden border-none"
-    >
-      <div>
-        <Image src={imageUrl} alt="" width={182} height={99} />
-      </div>
-      <div className="p-3">
-        <div className="flex items-center justify-between">
-          <span className="body-14-semibold">{title}</span>
-          <span>
-            <FolderIcon active={isFavorite} onClick={handleFavoriteClick} />
-          </span>
-        </div>
-        <div className="caption-12-regular text-neutral-50 mb-3">주소 ~로 000 까지</div>
-        <div className="flex items-center gap-1">
-          <span>
-            <Badge variant="outlined" label="카테고리" color="primary-40" />
-          </span>
-          <span>
-            <Badge variant="outlined" label="사용자 지정" color="secondary-50" />
-          </span>
-        </div>
-      </div>
-    </Card>
-  );
-};
+import { HotPlaceCard } from './HotPlaceCard';
 
 export const HotPlaceSection = (): React.ReactElement => {
   return (
     <section className="mb-5">
       <div className="flex justify-between mb-4">
         <span className="heading-20-bold">요즘 HOT한 장소</span>
+        {/* TODO : 라우팅 작업 */}
         <CaretRightIcon />
       </div>
       <div className="flex overflow-x-scroll gap-3 scroll-none">
-        <HotPlaceItem imageUrl="/images/TestImage.png" title="지도상의 장소 이름" />
-        <HotPlaceItem imageUrl="/images/TestImage.png" title="지도상의 장소 이름" />
-        <HotPlaceItem imageUrl="/images/TestImage.png" title="지도상의 장소 이름" />
-        <HotPlaceItem imageUrl="/images/TestImage.png" title="지도상의 장소 이름" />
+        <HotPlaceCard
+          imageUrl="/images/TestImage.png"
+          title="지도상의 장소 이름"
+          address="주소주소"
+        />
+        <HotPlaceCard
+          imageUrl="/images/TestImage.png"
+          title="지도상의 장소 이름"
+          address="주소주소"
+        />
+        <HotPlaceCard
+          imageUrl="/images/TestImage.png"
+          title="지도상의 장소 이름"
+          address="주소주소"
+        />
+        <HotPlaceCard
+          imageUrl="/images/TestImage.png"
+          title="지도상의 장소 이름"
+          address="주소주소"
+        />
       </div>
     </section>
   );
