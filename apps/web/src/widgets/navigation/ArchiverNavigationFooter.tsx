@@ -20,13 +20,13 @@ export const ARCHIVER_NAVIGATION_FOOTER_ITEMS = [
   {
     key: 'follow',
     label: '팔로우',
-    href: '/follow-list',
+    href: 'follow-list',
     icon: NavigationFooterFolderIcon,
   },
   {
     key: 'archive',
     label: '아카이브',
-    href: '/archive',
+    href: 'my-archive',
     icon: LocationPinIcon,
   },
   {
