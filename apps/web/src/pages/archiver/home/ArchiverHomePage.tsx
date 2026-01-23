@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Badge } from '@/shared/ui/Badge';
 import { SearchBar } from '@/shared/ui/SearchBar';
@@ -18,7 +19,7 @@ export const ArchiverHomePage = (): React.ReactElement => {
         <div className="relative">
           <div className=" w-full bg-[#84C6FF] h-45 rounded-b-4xl px-5 pt-8 pb-13 ">
             <div className="mb-3">
-              <Badge variant="contained" color="primary-60">
+              <Badge variant="contained" className="rounded-xl bg-primary-60">
                 아카이버
               </Badge>
             </div>
@@ -32,13 +33,16 @@ export const ArchiverHomePage = (): React.ReactElement => {
             height={124}
             className="absolute top-8 right-9.75"
           />
-          <div className=" absolute left-1/2 -translate-x-1/2 -bottom-5 flex items-center rounded-full bg-transparent shadow-[0_0_11px_0_rgba(144,144,144,0.40)] ">
+          <Link
+            href={'search-result'}
+            className="absolute left-5 right-5 -bottom-5 flex items-center rounded-full bg-transparent shadow-[0_0_11px_0_rgba(144,144,144,0.40)] "
+          >
             <SearchBar
               value={searchedText}
               onChange={(e) => setSearchedText(e)}
               onSubmit={() => {}}
             />
-          </div>
+          </Link>
         </div>
         <div className="p-5">
           <CategorySection /> <HotPlaceSection /> <BelievedEditorSeciton />
