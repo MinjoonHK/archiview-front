@@ -4,11 +4,10 @@ import { useMemo, useState } from 'react';
 
 import { KakaoMap } from '@/shared/ui/KakaoMap';
 import { BottomSheet } from '@/shared/ui/common/BottomSheet/BottomSheet';
-
-import { EditorPlaceItem } from '../../home/ui/EditorPlaceItem';
-
-import { CategoryOptionTabs } from '../CategoryOptionTabs';
+import { CategoryOptionTabs } from '@/pages/editor/profile/CategoryOptionTabs';
 import { HamburgerIcon } from '@/shared/ui/icon/HamburgerIcon';
+
+import { ArchiverPlaceItem } from './ArchiverPlaceItem';
 
 export type CategoryTab =
   | 'ALL'
@@ -29,12 +28,10 @@ interface IPlace {
   lng: number;
   savedCount: number;
   viewCount: number;
-  shareCount: number;
-  instagramCount: number;
   category: CategoryTab;
 }
 
-export const EditorProfilePageInner = ({ initialPlaces }: { initialPlaces: IPlace[] }) => {
+export const MyArchivePageInner = ({ initialPlaces }: { initialPlaces: IPlace[] }) => {
   const [open, setOpen] = useState(false);
   const [category, setCategory] = useState<CategoryTab>('ALL');
   const [selectedPlaceId, setSelectedPlaceId] = useState<string | null>(null);
@@ -51,8 +48,6 @@ export const EditorProfilePageInner = ({ initialPlaces }: { initialPlaces: IPlac
 
   return (
     <div className="flex h-full flex-col min-h-0">
-      <div className="bg-amber-400 h-50">프로필 카드 섹션</div>
-
       <CategoryOptionTabs value={category} onChange={setCategory} />
 
       <div className="flex-1 min-h-0 pt-6">
@@ -72,14 +67,12 @@ export const EditorProfilePageInner = ({ initialPlaces }: { initialPlaces: IPlac
               <HamburgerIcon />
             </div>
             {filteredPlaces.map((p) => (
-              <EditorPlaceItem
+              <ArchiverPlaceItem
                 key={p.id}
                 name={p.title}
                 description={p.description}
                 savedCount={p.savedCount}
                 viewCount={p.viewCount}
-                shareCount={p.shareCount}
-                instagramCount={p.instagramCount}
               />
             ))}
           </div>

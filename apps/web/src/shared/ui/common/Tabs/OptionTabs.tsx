@@ -23,7 +23,7 @@ interface IOptionTabsProps<T extends string> {
   inactiveClassName?: string;
 }
 
-export function OptionTabs<T extends string>({
+export const OptionTabs = <T extends string>({
   items,
   value,
   onChange,
@@ -31,7 +31,7 @@ export function OptionTabs<T extends string>({
   buttonClassName = 'flex-none w-auto whitespace-nowrap transition-colors',
   activeClassName = 'bg-primary-40 text-white',
   inactiveClassName = 'bg-neutral-20 text-neutral-40',
-}: IOptionTabsProps<T>) {
+}: IOptionTabsProps<T>) => {
   return (
     <div className={containerClassName}>
       {items.map((t) => {
@@ -54,4 +54,4 @@ export function OptionTabs<T extends string>({
       })}
     </div>
   );
-}
+};

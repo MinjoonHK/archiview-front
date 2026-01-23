@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 import { Badge } from '@/shared/ui/Badge';
-import { ArchiverNavigationFooter } from '@/widgets/navigation/ArchiverNavigationFooter';
 import { SearchBar } from '@/shared/ui/SearchBar';
 import { CategorySection } from '@/pages/archiver/home/ui/CategorySection';
 import { HotPlaceSection } from '@/pages/archiver/home/ui/HotPlaceSection';
@@ -12,6 +11,7 @@ import { BelievedEditorSeciton } from '@/pages/archiver/home/ui/BelievedEditorSe
 
 export const ArchiverHomePage = (): React.ReactElement => {
   const [searchedText, setSearchedText] = useState<string>('');
+  
   return (
     <div className="flex min-h-screen flex-col">
       <div className="flex-1 overflow-y-auto scroll-none">

@@ -75,7 +75,7 @@ export const BottomSheet = ({
     <div
       ref={sheetRef}
       className={cn(
-        'fixed flex flex-col w-full max-w-125 bottom-0 left-1/2 z-40 h-full rounded-t-[20px] bg-white touch-none',
+        'fixed flex flex-col w-full max-w-125 bottom-0 left-1/2 z-40 h-full rounded-t-default bg-white touch-none',
         'transition-transform duration-250 ease-out',
       )}
       style={{
@@ -87,6 +87,9 @@ export const BottomSheet = ({
       onPointerUp={handlePointerUp}
       onPointerCancel={handlePointerUp}
     >
+      <div className="flex justify-center pt-1.25">
+        <div className="h-[5px] w-[36px] rounded-[2.5px] bg-[rgba(60,60,67,0.3)]" />
+      </div>
       {children}
     </div>
   );
