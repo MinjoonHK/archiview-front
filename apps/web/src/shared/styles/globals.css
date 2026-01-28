@@ -16,9 +16,9 @@
     --max-width: 100%;
   }
 
-  @media (min-width: 375px) {
+  @media (min-width: 500px) {
     :root {
-      --max-width: 375px;
+      --max-width: 500px;
     }
   }
 
