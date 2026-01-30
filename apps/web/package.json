@@ -10,6 +10,7 @@
     "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
+    "@webview-bridge/web": "^1.7.8",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
     "ky": "^1.14.2",

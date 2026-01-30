@@ -8,15 +8,8 @@ import { ApiError } from './error';
 export const clientApi = ky.create({
   prefixUrl: process.env.NEXT_PUBLIC_API_URL,
   timeout: 10000,
+  credentials: 'include',
   hooks: {
-    beforeRequest: [
-      (request) => {
-        const token = localStorage.getItem('accessToken');
-        if (token) {
-          request.headers.set('Authorization', `Bearer ${token}`);
-        }
-      },
-    ],
     afterResponse: [
       async (_request, _options, response) => {
         if (response.status === 401) {
