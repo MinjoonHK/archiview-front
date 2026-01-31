@@ -1,8 +1,6 @@
-const BASE = '/api/v1/archivers';
-
 export const ARCHIVER_ENDPOINTS = {
   me: {
-    profile: `${BASE}/me/profile`,
+    profile: `me/profile`,
   },
-  publicProfile: (archiverId: string | number) => `${BASE}/${archiverId}/profile`,
+  publicProfile: (archiverId: number) => `${archiverId}/profile`,
 } as const;
