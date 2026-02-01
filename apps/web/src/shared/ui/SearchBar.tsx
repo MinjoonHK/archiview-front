@@ -1,12 +1,14 @@
 import * as React from 'react';
 
 import { BlueFolderIcon, SearchIcon, RoundedXIcon } from './icon';
+import { cn } from '../lib/cn';
 
 interface ISearchBarProps {
   value: string;
   onChange: (value: string) => void;
   onSubmit: () => void;
   placeholder?: string;
+  className?: string;
 }
 
 export const SearchBar = ({
@@ -14,6 +16,7 @@ export const SearchBar = ({
   onChange,
   onSubmit,
   placeholder = '게시물 URL 또는 키워드를 검색해보세요.',
+  className,
 }: ISearchBarProps): React.ReactElement => {
   return (
     <form
@@ -21,7 +24,7 @@ export const SearchBar = ({
         e.preventDefault();
         onSubmit();
       }}
-      className="flex w-full items-center gap-4 rounded-full bg-white px-5 h-13.5"
+      className={cn('flex w-full items-center gap-4 rounded-full bg-white px-5 h-13.5', className)}
     >
       <BlueFolderIcon className="h-7.5 w-7.5" />
 

@@ -30,7 +30,9 @@ interface IProps {
   onChange: (next: CategoryTab) => void;
 }
 
-export const ProfileCategoryOptionTabs = ({ value, onChange }: IProps) => {
+// TODO : 엔티티 분리되면 엔티티로 빼기 (아카이버랑 공용으로 사용함)
+
+export const CategoryOptionTabs = ({ value, onChange }: IProps) => {
   return (
     <OptionTabs
       items={CATEGORY_TABS}

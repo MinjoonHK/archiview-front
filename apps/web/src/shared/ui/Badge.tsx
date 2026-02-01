@@ -1,32 +1,24 @@
+import { cn } from '../lib/cn';
+
 interface IBadgeProps {
   variant: 'contained' | 'outlined';
-  label: string;
-  color: string;
+  color?: string;
+  children: React.ReactNode;
+  className?: string;
 }
 
-export const Badge = ({ variant, label, color }: IBadgeProps): React.ReactElement => {
+export const Badge = ({ variant, children, color, className }: IBadgeProps): React.ReactElement => {
   const isOutlined = variant === 'outlined';
-  const themeColor = `var(--color-${color})`;
 
-  return (
-    <div
-      style={{
-        color: isOutlined ? themeColor : 'var(--color-neutral-10)',
-        backgroundColor: isOutlined ? 'transparent' : themeColor,
-        borderColor: isOutlined ? themeColor : 'transparent',
-      }}
-      className={`
-        inline-flex
-        items-center
-        px-3
-        py-1
-        h-7
-        rounded-md
-        text-xs
-        ${isOutlined ? 'border' : ''}
-      `}
-    >
-      {label}
-    </div>
+  // 기본값(공통)
+  const base = 'inline-flex items-center px-3 py-1 h-7 rounded-md text-xs';
+
+  const contained = cn(`bg-[var(--color-${color})]`, 'text-[var(--color-neutral-10)]');
+  const outlined = cn(
+    'bg-transparent border',
+    `border-[var(--color-${color})]`,
+    `text-[var(--color-${color})]`,
   );
+
+  return <div className={cn(base, isOutlined ? outlined : contained, className)}>{children}</div>;
 };
